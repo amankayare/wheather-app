@@ -7,8 +7,10 @@ $('doucment').ready(function () {
     $('#input-box').keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
-            console.log('fsdf')
-            $('.for-animation').css("display", "block");
+
+            $('.for-animation').css("visibility", "visible");
+            $('.for-animation').css("opacity", "1");
+
 
         }
         //Stop the event from propogation to other handlers
