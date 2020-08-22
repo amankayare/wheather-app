@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Wheather App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Jquery first then custom-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src='main.js'></script>
+</head>
+<style>
+    body {
+        height: 100%;
+        background-image: url('back-ground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #ffffff;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+        opacity: 30px;
+
+    }
+
+    .container-fluid {
+
+        height: 105vh;
+        width: 100%;
+
+    }
+
+    .header {
+        padding: 2%;
+        height: 12%;
+        color: white;
+
+    }
+
+    #input-box {
+        border: none;
+        outline: none;
+        border-radius: 15em;
+
+    }
+
+    .left {
+        width: 100%;
+        font-family: Montserrat, sans-serif;
+
+    }
+
+    .right {
+        padding: 2%;
+        background: white;
+        border-radius: 15px;
+        opacity: 30%;
+        margin-left: -20px;
+
+
+    }
+
+    .name {
+        color: white;
+        font-weight: 600;
+        font-size: 3rem;
+    }
+
+    #date {
+        color: white;
+        font-size: 30px;
+    }
+
+    #temp {
+        font-size: 60px;
+        color: white;
+    }
+
+    .details {
+        background: violet;
+
+    }
+
+    .upper {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .lower {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .box {
+        width: 100%;
+        color: grey;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    #degree {
+        position: absolute;
+        bottom: 128px;
+        font-size: 44px;
+    }
+
+    .item {
+        background-color: #ffffff;
+        width: 120px;
+        margin: 5px;
+        opacity: 30%;
+
+    }
+
+    /* Inline-block */
+    .inline {
+        vertical-align: middle;
+        overflow-x: scroll;
+    }
+
+    .inline-item {
+        display: inline-block;
+        vertical-align: middle;
+        height: 96px;
+        margin-right: -4px;
+    }
+
+
+    /* Flex */
+    .flex {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+
+    .flex-item {
+        flex: 0 0 auto;
+    }
+
+    .container {
+        margin: 5px;
+        width: 100%;
+        height: 120px;
+        white-space: nowrap;
+        margin-left: 36px;
+        margin-top: 35px;
+
+
+    }
+
+    .for-animation {
+   
+        display: none;
+
+    }
+
+    @media (max-width: 411px) and(max-width: 600px) {
+        .container-fluid {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 760px) {
+
+        .container-fluid {
+
+            height: 180vh;
+
+
+        }
+
+        .container {
+            margin-left: 0px;
+
+        }
+
+        .right {
+            margin: 20px;
+            margin-top: 26px;
+        }
+
+        #degree {
+            position: absolute;
+            bottom: 138px;
+            font-size: 44px;
+        }
+    }
+</style>
+
+<body>
+
+    <div class=" container-fluid ">
+
+        <div class="row header">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                <h1>Wheather App </h1>
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-md-12  d-flex justify-content-center align-items-center">
+                <input type="text" placeholder="Enter City" class="col-md-6 col-sm-6 p-3" id="input-box">
+            </div>
+        </div>
+        <div class="for-animation ">
+            <div class="row  mt-5 ">
+                <div class="col-md-6 left">
+                    <div class="city pl-3">
+                        <div class="name">Indore</div><span id="date">20 Aug 2020</span>
+                    </div>
+                    <div class="temperature p-4 d-flex justify-content-center align-items-center">
+                        <div class="flex-1">
+                            <img style="height:200px; " src="cloud.png" alt="">
+                        </div>
+                        <div id="temp" class="flex-1  ml-5">
+                            <span>24</span><span id="degree">o</span>
+
+                            <h2>Rain</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6  right ">
+                    <div class="upper d-flex justify-content-around ">
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                    </div>
+                    <div class="lower d-flex justify-content-around">
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
+                            <span style="color: red;">110</span><span>Hight</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row horizontal-item mt-1">
+
+                <div class="container flex">
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                    <div class="item flex-item"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
