@@ -9,7 +9,7 @@ $('doucment').ready(function () {
         if (keycode == '13') {
             let key = "51baa663fb0ddf13f2031c7c25cd3f03";
             let cityName = $('#input-box').val();
-            let URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`;
+            let URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`;
             $('#input-box').val('');
 
             $.ajax({
