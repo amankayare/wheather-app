@@ -65,7 +65,7 @@ $('doucment').ready(function () {
                     var errorMessage = xhr.status + ': ' + xhr.statusText
                     console.log("ERROR: " + errorMessage)
                     $('.in-box').append(`<div class="alert t col-md-12 mt-2  col-lg-6 alert-danger alert-dismissible fade show" role="alert">
-                    <strong>City Not Found!</strong> You should check in on some of those fields below.
+                    <strong>City Not Found!</strong> Please enter well known cities only because we do not support all cities.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
