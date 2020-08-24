@@ -44,7 +44,7 @@ $('doucment').ready(function () {
                     $('.container :nth-child(1) span').html(`Deg: ${data.wind.deg}`);
                     $('.container :nth-child(2) span').html(`Speed: ${data.wind.speed}`);
                     $('.container :nth-child(3) span').html(`${data.weather[0].description}`);
-                    $('.container :nth-child(4) span').html(`Gust: ${data.wind.gust}`);
+                    $('.container :nth-child(4) span').html(`${data.visibility}`);
                     $('.container :nth-child(5) span').html(`${data.sys.sunrise}`);
                     $('.container :nth-child(6) span').html(`${data.timezone}`);
 
